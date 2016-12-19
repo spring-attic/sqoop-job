@@ -1,2 +1,5 @@
-#Core components shared by other projects in the task app starters organization
-This module consists of core dependencies and other common artifacts.
+# Sqoop Job Task Application
+
+To learn more about this application and the supported properties, please review the following link.
+
+include::spring-cloud-starter-task-sqoop-job/README.adoc[]
