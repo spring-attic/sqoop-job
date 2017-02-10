@@ -34,8 +34,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.test.IntegrationTest;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.cloud.task.sqoop.common.SqoopToolDatabaseConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -45,6 +44,7 @@ import org.springframework.jdbc.datasource.DataSourceUtils;
 import org.springframework.jdbc.datasource.SingleConnectionDataSource;
 import org.springframework.jdbc.datasource.init.DatabasePopulator;
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static org.junit.Assert.assertTrue;
@@ -59,9 +59,8 @@ import static org.junit.Assert.assertTrue;
  * @author Thomas Risberg
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes={SqoopToolDatabaseConfiguration.class,
+@SpringBootTest(classes={SqoopToolDatabaseConfiguration.class,
 		SqoopToolJobApplicationTests.TestConfig.class, SqoopToolJobApplicationTests.TestSqoopJobTaskApplication.class})
-@IntegrationTest
 public abstract class SqoopToolJobApplicationTests {
 
 	private static String testDir;
@@ -76,7 +75,7 @@ public abstract class SqoopToolJobApplicationTests {
 		System.setProperty("sqoop.test.dir", testDir);
 	}
 
-	@IntegrationTest({"spring.cloud.task.closecontext.enable:false",
+	@TestPropertySource({"spring.cloud.task.closecontext.enable:false",
 			"spring.hadoop.fsUri=file:///",
 			"spring.hadoop.config.mapreduce.framework.name=local",
 			"metastore-url=jdbc:hsqldb:hsql://localhost:${db.server.port}/test",
@@ -102,7 +101,7 @@ public abstract class SqoopToolJobApplicationTests {
 		}
 	}
 
-	@IntegrationTest({"spring.cloud.task.closecontext.enable:false",
+	@TestPropertySource({"spring.cloud.task.closecontext.enable:false",
 			"spring.hadoop.fsUri=file:///",
 			"spring.hadoop.config.mapreduce.framework.name=local",
 			"metastore-url=jdbc:hsqldb:hsql://localhost:${db.server.port}/test",
@@ -132,7 +131,7 @@ public abstract class SqoopToolJobApplicationTests {
 		}
 	}
 
-	@IntegrationTest({"spring.cloud.task.closecontext.enable:false",
+	@TestPropertySource({"spring.cloud.task.closecontext.enable:false",
 			"spring.hadoop.fsUri=file:///",
 			"spring.hadoop.config.mapreduce.framework.name=local",
 			"metastore-url=jdbc:hsqldb:hsql://localhost:${db.server.port}/test",
