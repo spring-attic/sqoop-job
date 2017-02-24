@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>sqoop-job-task-app-dependencies</artifactId>
-    <version>1.1.1.BUILD-SNAPSHOT</version>
+    <version>1.2.0.BUILD-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>sqoop-job-task-app-dependencies</name>
     <description>Spring Cloud Task Sqoop Job App Dependencies</description>
@@ -25,7 +25,7 @@
             <dependency>
                 <groupId>org.springframework.cloud.task.app</groupId>
                 <artifactId>spring-cloud-starter-task-sqoop-job</artifactId>
-                <version>1.1.1.BUILD-SNAPSHOT</version>
+                <version>1.2.0.BUILD-SNAPSHOT</version>
             </dependency>
 			<dependency>
 				<groupId>org.apache.sqoop</groupId>
