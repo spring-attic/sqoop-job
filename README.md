@@ -1,4 +1,5 @@
 # Sqoop Job Task Application
+PLEASE NOTE: This project is no longer actively developed.
 
 To learn more about this application and the supported properties, please review the following link.
 
