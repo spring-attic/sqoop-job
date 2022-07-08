@@ -1,3 +1,5 @@
+# sqoop-job is no longer actively maintained by VMware, Inc.
+
 # Sqoop Job Task Application
 PLEASE NOTE: This project is no longer actively developed.
 
